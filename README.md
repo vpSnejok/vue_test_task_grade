@@ -6,6 +6,6 @@
 Відкрийте термінал і перейдіть до папки проєкту за допомогою команди:
 
 ```
-cd asd
+cd vue_test_task_grade
 npm install
 npm run dev
