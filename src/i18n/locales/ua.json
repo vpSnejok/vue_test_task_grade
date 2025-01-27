@@ -1,0 +1,17 @@
+{
+  "googleReviews": {
+    "loading": "Завантаження..."
+  },
+  "googleReview": {
+    "title": "Відгуки наших клієнтів у Google!",
+    "review": "відгуки",
+    "buttonView": "Переглянути",
+    "buttonModal": "Модальне вікно"
+  },
+  "modal": {
+    "city": "Місто",
+    "rating": "Рейтинг",
+    "reviews": "Відгуків",
+    "buttonClose": "Закрити"
+  }
+}

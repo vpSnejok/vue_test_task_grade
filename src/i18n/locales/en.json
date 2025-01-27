@@ -1,0 +1,17 @@
+{
+  "googleReviews": {
+    "loading": "Loading..."
+  },
+  "googleReview": {
+    "title": "Feedback from our customers on Google!",
+    "review": "review",
+    "buttonView": "View",
+    "buttonModal": "Modal window"
+  },
+  "modal": {
+    "city": "City",
+    "rating": "Rating",
+    "reviews": "Reviews",
+    "buttonClose": "Close"
+  }
+}
