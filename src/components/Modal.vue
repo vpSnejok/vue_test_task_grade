@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import {useI18n} from "vue-i18n";
+import Button from "./Button.vue";
 
 interface ModalProps {
   isOpen: boolean;
@@ -29,7 +30,9 @@ const closeModal = () => {
         <p><strong>{{ t('modal.rating') }}:</strong> {{ rating }}</p>
         <p><strong>{{ t('modal.reviews') }}</strong> {{ review }}</p>
       </div>
-      <button class="review__button primary" @click="closeModal">{{ t('modal.buttonClose') }}</button>
+      <Button class="review__button primary" @click="closeModal">
+        {{ t('modal.buttonClose') }}
+      </Button>
     </div>
   </div>
 </template>

@@ -1,25 +1,39 @@
 <script setup lang="ts">
-import {defineProps} from "vue";
+import {computed} from 'vue';
 
-interface ButtonProps {
-  label: string;
-  type: "primary" | "secondary";
-  onClick?: (event: MouseEvent) => void;
-}
+const props = defineProps({
+  type: {
+    type: String as () => 'primary' | 'secondary' ,
+    default: 'primary',
+  },
+  disabled: {
+    type: Boolean,
+    default: false,
+  },
+});
 
-const props = defineProps<ButtonProps>();
+const emit = defineEmits(['click']);
+
+const buttonClasses = computed(() => [
+  'review__button',
+  `review__button--${props.type}`,
+  {'review__button--disabled': props.disabled},
+]);
+
+const handleClick = (event: MouseEvent) => {
+  if (!props.disabled) {
+    emit('click', event);
+  }
+};
 </script>
 
 <template>
   <button
-      class="review__button"
-      :class="{
-      'review__button--primary': props.type === 'primary',
-      'review__button--secondary': props.type === 'secondary',
-    }"
-      @click="props.onClick"
+      :class="buttonClasses"
+      :disabled="disabled"
+      @click="handleClick"
   >
-    {{ props.label }}
+    <slot></slot>
   </button>
 </template>
 
