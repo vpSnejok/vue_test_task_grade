@@ -55,15 +55,17 @@ const toggleModal = () => {
     </div>
     <div class="review__actions">
       <Button
-          :label="t('googleReview.buttonView')"
           type="primary"
-          :onClick="redirectToGoogle"
-      />
+          @click="redirectToGoogle"
+      >
+        {{ t('googleReview.buttonView') }}
+      </Button>
       <Button
-          :label="t('googleReview.buttonModal')"
           type="secondary"
-          :onClick="toggleModal"
-      />
+          @click="toggleModal"
+      >
+        {{ t('googleReview.buttonModal') }}
+      </Button>
     </div>
   </li>
 </template>
