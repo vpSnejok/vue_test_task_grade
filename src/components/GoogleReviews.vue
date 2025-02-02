@@ -55,15 +55,15 @@ onMounted(() => {
     </div>
 
     <ul v-else class="list">
-      <li v-for="data in films" :key="data.id">
-        <GoogleReview
-            :id="data.id"
-            :city="data.city"
-            :rating="data.rating"
-            :review="data.review"
-            @open-modal="toggleModal"
-        />
-      </li>
+      <GoogleReview
+          v-for="data in films"
+          :key="data.id"
+          :id="data.id"
+          :city="data.city"
+          :rating="data.rating"
+          :review="data.review"
+          @open-modal="toggleModal"
+      />
     </ul>
 
     <Modal
