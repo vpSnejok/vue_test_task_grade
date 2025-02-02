@@ -39,15 +39,17 @@ const toggleModal = () => {
         <h4 class="review__title">{{ t('googleReview.title') }}</h4>
       </div>
       <div class="review__stars">
-        <span class="review__rating">{{ rating }}</span>
-        <p class="review__stars-list">
-          <span
-              v-for="star in 5"
-              :key="star"
-              class="review__star"
-              :class="{ 'review__star--filled': star <= Number(rating) }"
-          >★</span>
-        </p>
+        <div class="review__stars-top">
+          <span class="review__rating">{{ rating }}</span>
+          <p class="review__stars-list">
+      <span
+          v-for="star in 5"
+          :key="star"
+          class="review__star"
+          :class="{ 'review__star--filled': star <= Number(rating) }"
+      >★</span>
+          </p>
+        </div>
         <p class="review__answers">{{ review }} {{ t('googleReview.review') }}</p>
       </div>
     </div>
@@ -102,6 +104,12 @@ const toggleModal = () => {
   &__stars {
     display: flex;
     flex-direction: column;
+
+    &-top {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
 
     &-list {
       display: flex;
@@ -168,26 +176,30 @@ const toggleModal = () => {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+
     &__stars {
       flex-direction: row;
       align-items: center;
       gap: 20px;
     }
-
   }
+
   @media (min-width: 1200px) {
     &__header {
       margin-right: 50px;
     }
+
     &__header-stars {
       flex-direction: row;
     }
+
     &__actions {
       .review__button {
         padding: 10px 20px;
       }
     }
   }
+
   @media (min-width: 1367px) {
     &__header {
       margin-right: 60px;
